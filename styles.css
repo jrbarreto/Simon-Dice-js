@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  background: radial-gradient(gray, black);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.gameboard-bot,
+.gameboard-user {
+  background-color: rgb(136, 3, 3);
+  border: 1px solid black;
+  margin: 2rem 5rem;
+  height: 45rem;
+  width: 45rem;
+}
+.container__bulb {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bot-bulb-0,
+.bot-bulb-1,
+.bot-bulb-2,
+.bot-bulb-3,
+.bot-bulb-4,
+.user-bulb-0,
+.user-bulb-1,
+.user-bulb-2,
+.user-bulb-3,
+.user-bulb-4 {
+  border: 2px solid black;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background: radial-gradient(gray, black);
+}
+
+.container__box-bot {
+  border: 2px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: black;
+  margin: 0 3rem;
+}
+
+.container__box-user {
+  /* border: 2px solid rgb(136, 3, 3); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* background-color: rgb(136, 3, 3); */
+  margin: 0 3rem;
+}
+
+.box-bot,
+.user-box {
+  border: 2px solid black;
+  margin: 1rem;
+  height: 10rem;
+  width: 10rem;
+}
+
+.box-bot {
+  background-color: black;
+}
+
+.user-box {
+  background: radial-gradient(gray, rgb(49, 49, 49));
+  border-radius: 1.5rem;
+}
+
+.b-b-0.light,
+.b-b-1.light,
+.b-b-2.light,
+.b-b-3.light,
+.b-b-4.light,
+.b-b-5.light,
+.b-b-6.light,
+.b-b-7.light,
+.b-b-8.light,
+.u-b-0.light,
+.u-b-1.light,
+.u-b-2.light,
+.u-b-3.light,
+.u-b-4.light,
+.u-b-5.light,
+.u-b-6.light,
+.u-b-7.light,
+.u-b-8.light {
+  background: #95CA3E;
+  /* background: #badc58; */
+}
+
+.btn-start {
+  background-color: #95CA3E;
+  color: #fff;
+  font-weight: bold;
+  height: 9rem;
+  width: 40rem;
+  font-size: 2.5rem;
+  margin-top: .5rem;
+}
+
+.hide {
+  display: none;
+}
