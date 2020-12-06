@@ -27,7 +27,7 @@ class Game {
   }
 
   initialize() {
-    // this.chooseUserBox = this.chooseUserBox.bind(this)
+    this.chooseUserBox = this.chooseUserBox.bind(this)
     btnStart.classList.add('hide')
     this.level = 1
     this.botBoxes = {
@@ -61,7 +61,6 @@ class Game {
   nextLevel() {
     this.subLevel = 0
     this.illuminateBotSequence()
-    // this.illuminateUserSequence()
     this.addClickEvents()
   }
 
@@ -87,30 +86,7 @@ class Game {
         return 'bBox8'
     }
   }
-  // TEST 1
-  // transformNumberToUserBox(number) {
-  //   switch(number) {
-  //     case 0:
-  //       return 'uBox0'
-  //     case 1:
-  //       return 'uBox1'
-  //     case 2:
-  //       return 'uBox2'
-  //     case 3:
-  //       return 'uBox3'
-  //     case 4:
-  //       return 'uBox4'
-  //     case 5:
-  //       return 'uBox5'
-  //     case 6:
-  //       return 'uBox6'
-  //     case 7:
-  //       return 'uBox7'
-  //     case 8:
-  //       return 'uBox8'
-  //   }
-  // }
-// FIN DEL TEST 1
+
   transformUserBoxToNumber(uBox) {
     switch(uBox) {
       case 'uBox0':
@@ -149,22 +125,7 @@ class Game {
   offBotBox(bBox) {
     this.botBoxes[bBox].classList.remove('light')
   }
-// TEST 1
-  // illuminateUserSequence() {
-  //   for(let i = 0; i < this.level; i++) {
-  //     const uBox = this.transformNumberToUserBox(this.sequence[i])
-  //     setTimeout(() => this.lightUserBox(uBox), 1000 * i)
-  //   }
-  // }
-  // lightUserBox(uBox) {
-  //   this.userBoxes[uBox].classList.add('light')
-  //   setTimeout(() => this.offUserBox(uBox), 400)
-  // }
 
-  // offUserBox(uBox) {
-  //   this.userBoxes[uBox].classList.remove('light')
-  // }
-// FIN DEL TEST 1
   addClickEvents() {
     this.userBoxes.uBox0.addEventListener('click', this.chooseUserBox)
     this.userBoxes.uBox1.addEventListener('click', this.chooseUserBox)
@@ -189,26 +150,36 @@ class Game {
     this.userBoxes.uBox8.removeEventListener('click', this.chooseUserBox)
   }
 
-  // chooseUserBox(ev) {
-  //   // console.log(ev)
-  //   const userBoxName = ev.target.dataset.uBox
-  //   const numberUserBox = this.transformUserBoxToNumber(userBoxName)
-  //   this.lightUserBox(userBoxName)
-  //   if (numberUserBox === this.sequence[this.subLevel]) {
-  //     this.subLevel++
-  //     if (this.subLevel === this.level) {
-  //       this.level++
-  //       this.deleteClickEvents()
-  //       if (this.level === (FINAL_LEVEL + 1)) {
-  //       // ganó!
-  //       } else {
-  //         setTimeout(this.nextLevel, 2000)
-  //       }
-  //     }
-  //   } else {
-  //     // perdió!
-  //   }
-  // }
+  chooseUserBox(ev) {
+    // console.log(ev)
+    const userBoxName = ev.target.dataset.ubox
+    console.log(userBoxName)
+    const numberUserBox = this.transformUserBoxToNumber(userBoxName)
+    this.lightUserBox(userBoxName)
+    if (numberUserBox === this.sequence[this.subLevel]) {
+      this.subLevel++
+      if (this.subLevel === this.level) {
+        this.level++
+        this.deleteClickEvents()
+        if (this.level === (FINAL_LEVEL + 1)) {
+        // ganó!
+        } else {
+          setTimeout(() => this.nextLevel(), 2000)
+        }
+      }
+    } else {
+      // perdió!
+    }
+  }
+
+  lightUserBox(uBox) {
+    this.userBoxes[uBox].classList.add('light')
+    setTimeout(() => this.offUserBox(uBox), 300)
+  }
+
+  offUserBox(uBox) {
+    this.userBoxes[uBox].classList.remove('light')
+  }
 }
 
 function startGame() {
