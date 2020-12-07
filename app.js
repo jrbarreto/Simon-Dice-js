@@ -1,3 +1,9 @@
+const botBulb0 = document.getElementById('botBulb0')
+const botBulb1 = document.getElementById('botBulb1')
+const botBulb2 = document.getElementById('botBulb2')
+const botBulb3 = document.getElementById('botBulb3')
+const botBulb4 = document.getElementById('botBulb4')
+
 const bBox0 = document.getElementById('bBox0')
 const bBox1 = document.getElementById('bBox1')
 const bBox2 = document.getElementById('bBox2')
@@ -17,7 +23,7 @@ const uBox6 = document.getElementById('uBox6')
 const uBox7 = document.getElementById('uBox7')
 const uBox8 = document.getElementById('uBox8')
 const btnStart = document.getElementById('btnStart')
-const FINAL_LEVEL = 2
+const FINAL_LEVEL = 5
 
 class Game {
   constructor() {
@@ -31,6 +37,13 @@ class Game {
     this.chooseUserBox = this.chooseUserBox.bind(this)
     this.toggleBtnStart()
     this.level = 1
+    this.botBulbs = {
+      botBulb0,
+      botBulb1,
+      botBulb2,
+      botBulb3,
+      botBulb4
+    }
     this.botBoxes = {
       bBox0,
       bBox1,
@@ -40,7 +53,7 @@ class Game {
       bBox5,
       bBox6,
       bBox7,
-      bBox8,
+      bBox8
     }
     this.userBoxes = {
       uBox0,
@@ -51,7 +64,7 @@ class Game {
       uBox5,
       uBox6,
       uBox7,
-      uBox8,
+      uBox8
     }
   }
 
@@ -173,7 +186,7 @@ class Game {
         if (this.level === (FINAL_LEVEL + 1)) {
           this.wonTheGame()
         } else {
-          setTimeout(() => this.nextLevel(), 2000)
+          setTimeout(() => this.nextLevel(), 900)
         }
       }
     } else {

@@ -8,15 +8,17 @@
 </head>
 <body>
   <p>Simon Dice</p>
+  <!-- start -->
+  <button id="btnStart" class="btn-start" onclick="startGame()">Empezar Juego</button>
   <div class="container">
     <!-- bot -->
     <div class="gameboard-bot">
       <div class="container__bulb">
-        <div id="botBulb1" class="bot-bulb-0"></div>
-        <div id="botBulb2" class="bot-bulb-1"></div>
-        <div id="botBulb3" class="bot-bulb-2"></div>
-        <div id="botBulb4" class="bot-bulb-3"></div>
-        <div id="botBulb5" class="bot-bulb-4"></div>
+        <div id="botBulb0" class="bot-bulb-0 b-bulb-0"></div>
+        <div id="botBulb1" class="bot-bulb-1"></div>
+        <div id="botBulb2" class="bot-bulb-2"></div>
+        <div id="botBulb3" class="bot-bulb-3"></div>
+        <div id="botBulb4" class="bot-bulb-4"></div>
       </div>
       <div class="container__box-bot">
         <div id="bBox0" class="box-bot b-b-0" data-bbox="bBox0"></div>
@@ -33,11 +35,11 @@
     <!-- user -->
     <div class="gameboard-user">
       <div class="container__bulb">
-        <div id="userBulb1" class="user-bulb-0"></div>
-        <div id="userBulb2" class="user-bulb-1"></div>
-        <div id="userBulb3" class="user-bulb-2"></div>
-        <div id="userBulb4" class="user-bulb-3"></div>
-        <div id="userBulb5" class="user-bulb-4"></div>
+        <div id="userBulb0" class="user-bulb-0"></div>
+        <div id="userBulb1" class="user-bulb-1"></div>
+        <div id="userBulb2" class="user-bulb-2"></div>
+        <div id="userBulb3" class="user-bulb-3"></div>
+        <div id="userBulb4" class="user-bulb-4"></div>
       </div>
       <div class="container__box-user">
         <div id="uBox0" class="user-box u-b-0" data-ubox="uBox0"></div>
@@ -52,8 +54,7 @@
       </div>
     </div>
   </div>
-  <!-- start -->
-  <button id="btnStart" class="btn-start" onclick="startGame()">Empezar Juego</button>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   <script src="./app.js"></script>

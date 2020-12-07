@@ -106,19 +106,22 @@ body {
 .u-b-5.light,
 .u-b-6.light,
 .u-b-7.light,
-.u-b-8.light {
+.u-b-8.light,
+.b-bulb-0.light {
   background: #95CA3E;
-  /* background: #badc58; */
 }
 
 .btn-start {
   background-color: #95CA3E;
   color: #fff;
   font-weight: bold;
-  height: 9rem;
-  width: 40rem;
+  height: 10rem;
+  width: 38rem;
   font-size: 2.5rem;
-  margin-top: .5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .hide {
