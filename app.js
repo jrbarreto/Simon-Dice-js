@@ -17,7 +17,7 @@ const uBox6 = document.getElementById('uBox6')
 const uBox7 = document.getElementById('uBox7')
 const uBox8 = document.getElementById('uBox8')
 const btnStart = document.getElementById('btnStart')
-const FINAL_LEVEL = 5
+const FINAL_LEVEL = 2
 
 class Game {
   constructor() {
@@ -27,8 +27,9 @@ class Game {
   }
 
   initialize() {
+    // this.nextLevel = this.nextLevel.bind(this)
     this.chooseUserBox = this.chooseUserBox.bind(this)
-    btnStart.classList.add('hide')
+    this.toggleBtnStart()
     this.level = 1
     this.botBoxes = {
       bBox0,
@@ -51,6 +52,14 @@ class Game {
       uBox6,
       uBox7,
       uBox8,
+    }
+  }
+
+  toggleBtnStart() {
+    if (btnStart.classList.contains('hide')) {
+      btnStart.classList.remove('hide')
+    } else {
+      btnStart.classList.add('hide')
     }
   }
 
@@ -162,13 +171,13 @@ class Game {
         this.level++
         this.deleteClickEvents()
         if (this.level === (FINAL_LEVEL + 1)) {
-        // ganó!
+          this.wonTheGame()
         } else {
           setTimeout(() => this.nextLevel(), 2000)
         }
       }
     } else {
-      // perdió!
+      this.lostTheGame()
     }
   }
 
@@ -179,6 +188,19 @@ class Game {
 
   offUserBox(uBox) {
     this.userBoxes[uBox].classList.remove('light')
+  }
+
+  wonTheGame() {
+    swal('Felicitaciones!', 'Ganaste el juego', 'success')
+      .then(() => this.initialize())
+  }
+
+  lostTheGame() {
+    swal('Lamentable!', 'Perdiste el juego', 'error')
+      .then(() => {
+        this.deleteClickEvents()
+        this.initialize()
+      })
   }
 }
 
