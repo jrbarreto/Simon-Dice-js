@@ -1,8 +1,8 @@
-const botBulb0 = document.getElementById('botBulb0')
-const botBulb1 = document.getElementById('botBulb1')
-const botBulb2 = document.getElementById('botBulb2')
-const botBulb3 = document.getElementById('botBulb3')
-const botBulb4 = document.getElementById('botBulb4')
+// const botBulb0 = document.getElementById('botBulb0')
+// const botBulb1 = document.getElementById('botBulb1')
+// const botBulb2 = document.getElementById('botBulb2')
+// const botBulb3 = document.getElementById('botBulb3')
+// const botBulb4 = document.getElementById('botBulb4')
 
 const bBox0 = document.getElementById('bBox0')
 const bBox1 = document.getElementById('bBox1')
@@ -37,13 +37,13 @@ class Game {
     this.chooseUserBox = this.chooseUserBox.bind(this)
     this.toggleBtnStart()
     this.level = 1
-    this.botBulbs = {
-      botBulb0,
-      botBulb1,
-      botBulb2,
-      botBulb3,
-      botBulb4
-    }
+    // this.botBulbs = {
+    //   botBulb0,
+    //   botBulb1,
+    //   botBulb2,
+    //   botBulb3,
+    //   botBulb4
+    // }
     this.botBoxes = {
       bBox0,
       bBox1,
